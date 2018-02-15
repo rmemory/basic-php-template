@@ -9,7 +9,9 @@
     ];
 
     public static function load($file) {
+      // Create Router instance
       $router = new static;
+      // Import routes
       require $file;
 
       return $router;
@@ -33,13 +35,34 @@
     // $requestType will be either GET or POST
     public function direct($uri, $requestType) {
 
+
       if (array_key_exists($uri, $this->routes[$requestType])) {
-      //   return $this->routes[$uri];
+      // return $this->routes[$uri];
       // return the controller for the uri and requestType
-        return $this->routes[$requestType][$uri];
+      // return $this->routes[$requestType][$uri];
+
+      return $this->callAction(
+        /*
+          explode returns an array. The '...' operator splits
+          them into individual args, which requires php 5 or higher
+        */
+        ...explode('@', $this->routes[$requestType][$uri])
+      );
       }
 
       throw new Exception("No route defined");
+    }
+
+    protected function callAction($controller, $action) {
+
+      // New up the controller
+      $controller = new $controller;
+
+      if (! method_exists($controller, $action)) {
+        throw new Exception("$controller does not respond to the $action action");
+      }
+
+      return $controller->$action();
     }
   }
  ?>

@@ -1,6 +1,8 @@
 <?php
-// var_dump($_SERVER);
+
 /*
+var_dump($_SERVER);
+
 The following will return the "values".
 
 names?name=gasg
@@ -28,9 +30,14 @@ POST operations instead of GET operations
 //Need to add a new method to add stuff to the database in
 // QueryBuilder
 
-$app['database']->insert('users', [
+// $app['database']->insert('users', [
+//   'names' => $_POST['name']
+// ]);
+
+App::get('database')->insert('users', [
   'names' => $_POST['name']
 ]);
+
 
 /*
   After adding the name to the database, redirect back to the
