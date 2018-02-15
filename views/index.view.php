@@ -14,6 +14,10 @@
   <?php endforeach; ?>
 </ul>
 
+<?php foreach ($users as $user) : ?>
+  <li><?= $user->names; ?></li>
+
+<?php endforeach; ?>
 <h1>Submit your name</h1>
 <!-- Submit a name, trigger a controller, and fetch data -->
 <!-- Note that "GET" methods will modify the url, to look something
