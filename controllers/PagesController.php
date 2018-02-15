@@ -1,4 +1,9 @@
 <?php
+
+  namespace App\Controllers;
+
+  use App\Core\App;
+  
   /*
     Receives a request, gather information, delegate response
     Receive request

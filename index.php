@@ -1,6 +1,9 @@
 
 <?php
 
+use App\Core\Router;
+use App\Core\Request;
+
 // The following three lines cause php errors to be displayed
 // in the browser
 ini_set('display_errors', 1);

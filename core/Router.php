@@ -1,4 +1,9 @@
 <?php
+
+  namespace App\Core;
+
+  use App\Controllers\PagesController;
+
   class Router {
     public $routes = [
       'GET' => [],
@@ -56,6 +61,9 @@
     protected function callAction($controller, $action) {
 
       // New up the controller
+      // Add namespaces, this allows the paths in the
+      // routes.php file to remain as simple as possible.
+      $controller = "App\\Controllers\\{$controller}";
       $controller = new $controller;
 
       if (! method_exists($controller, $action)) {
