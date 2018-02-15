@@ -1,6 +1,9 @@
 
 <?php
 
+use App\Core\Router;
+use App\Core\Request;
+
 // The following three lines cause php errors to be displayed
 // in the browser
 ini_set('display_errors', 1);
@@ -16,8 +19,4 @@ display_errors = on
   require 'vendor/autoload.php';
   require 'core/bootstrap.php';
 
-  $router = new Router();
-
-  require 'routes.php';
-
-  require Router::load('routes.php')->direct(Request::uri(), Request::method());
+  Router::load('app/routes.php')->direct(Request::uri(), Request::method());

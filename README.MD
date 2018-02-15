@@ -18,6 +18,10 @@ mysql> update todos set description='Go to the store' where id=1;
 mysql> insert into todos (description, completed) values('Make the bed', false);
 mysql> insert into todos (description, completed) values('Clean house', false);
 mysql> update todos set completed=true where id=1;
+
+mysql> use mytodo; 
+mysql> create table users (id integer PRIMARY KEY AUTO_INCREMENT, names text NOT NULL);
+mysql> select * users;
 ```
 
 The code in this repo can then be checked out in to the root location of a web server, add the proper mysql password to

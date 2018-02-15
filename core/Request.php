@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 // Fetch information about the currect browser request
 class Request {
   public static function uri() {

@@ -1,6 +1,33 @@
 <?php
-// var_dump($_SERVER);
-/*
+
+namespace App\Controllers;
+
+use App\Core\App;
+
+class UsersController {
+
+  public function index() {
+    // return the users view
+    $users = App::get('database')->selectAll('users');
+
+    return view ('users', ['users' => $users]);
+  }
+
+  public function store() {
+    // Store new user
+    App::get('database')->insert('users', [
+      'names' => $_POST['name']
+    ]);
+
+    // Redirect back to all users
+    header('Location: /');
+  }
+
+}
+
+/* Notes:
+var_dump($_SERVER);
+
 The following will return the "values".
 
 names?name=gasg
@@ -28,14 +55,8 @@ POST operations instead of GET operations
 //Need to add a new method to add stuff to the database in
 // QueryBuilder
 
-$app['database']->insert('users', [
-  'names' => $_POST['name']
-]);
+// $app['database']->insert('users', [
+//   'names' => $_POST['name']
+// ]);
 
-/*
-  After adding the name to the database, redirect back to the
-  main page
-*/
-header('Location: /');
-
-?>
+ ?>
