@@ -17,7 +17,7 @@
      instead of get operations.
 -->
 <!--form method="GET" action="/names"-->
-<form method="POST" action="/names">
+<form method="POST" action="/users">
   <!-- Always include the "name" attribute to input, otherwise
        it won't submit. When pressing the submit button, it
       creates a url that looks like this:

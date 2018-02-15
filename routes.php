@@ -27,6 +27,11 @@
 
   // Here 'index' is a convention that means, display all
   // users.
-  $router->get('users', 'UsersController@index')
+  $router->get('users', 'UsersController@index');
+
+  /* In the HTML form, see the usage of the following:
+     <form method="POST" action="/users">
+  */
+  $router->post('users', 'UsersController@store');
 
  ?>
