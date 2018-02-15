@@ -3,7 +3,7 @@ It requires access to a mysql database, containing a database "mytodo" and a tab
 installation and configuration of both Apache (or other) web server and mysql. But, once the web server is running, 
 and mysql is installed, you can create a simple example database and todos table like this:
 
-{code}
+```
 $ mysql -u root -p
 mysql> create database mytodo;
 mysql> use mytodo;
@@ -18,7 +18,7 @@ mysql> update todos set description='Go to the store' where id=1;
 mysql> insert into todos (description, completed) values('Make the bed', false);
 mysql> insert into todos (description, completed) values('Clean house', false);
 mysql> update todos set completed=true where id=1;
-{code}
+```
 
 The code in this repo can then be checked out in to the root location of a web server, add the proper mysql password to
 config.php, and it should work.
