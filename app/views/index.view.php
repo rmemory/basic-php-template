@@ -16,5 +16,5 @@
 </ul>
 
 <!-- display users -->
-<?php include('views/partials/users.php') ?>
+<?php include('app/views/partials/users.php') ?>
 <?php require('partials/footer.php'); ?>
