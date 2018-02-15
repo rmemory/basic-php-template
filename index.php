@@ -13,7 +13,8 @@ Set this in the php.ini file to display parse errors:
 display_errors = on
 */
 
-  $database = require 'core/bootstrap.php';
+  require 'vendor/autoload.php';
+  require 'core/bootstrap.php';
 
   $router = new Router();
 
